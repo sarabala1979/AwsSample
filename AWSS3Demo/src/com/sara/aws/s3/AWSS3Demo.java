@@ -14,9 +14,9 @@ public class AWSS3Demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		AWSCredentials credentials = new BasicAWSCredentials("AKIAIXC5224TGDLD5RXA", "s6/5mEjd+lzW7BP/oJFzaTD+oQeidxBmrmaaeGLN");
+		AWSCredentials credentials = new BasicAWSCredentials("", "");
 		AmazonS3 s3client = new AmazonS3Client(credentials);
-		S3Object  s3Obj = s3client.getObject(new GetObjectRequest("sarabala-test-s3","wc.txt"));
+		S3Object  s3Obj = s3client.getObject(new GetObjectRequest("","wc.txt"));
 		BufferedReader reader = new BufferedReader(new InputStreamReader(s3Obj.getObjectContent()));
 		
 		reader.lines().filter(s->s.startsWith("a")).forEach(s->System.out.println(s));
